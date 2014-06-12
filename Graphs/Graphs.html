@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta name="generator"
+    content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+    <meta charset="UTF-8" />
+    <title>HTML 5 Graph Page</title>
+	
+	<link rel="stylesheet" href="http://www.rgraph.net/demos/demos.css" type="text/css" media="screen" />
+    
+    <script type="text/javascript" src="http://www.rgraph.net/libraries/RGraph.common.core.js" ></script>
+    <script type="text/javascript" src="http://www.rgraph.net/libraries/RGraph.bar.js" ></script>
+	<script type="text/javascript" src="http://www.rgraph.net/libraries/RGraph.pie.js" ></script>
+	<script type="text/javascript" src="http://www.rgraph.net/libraries/RGraph.gauge.js" ></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	
+  </head>
+  <body>
+     <h1>Bar chart Grow effect</h1>
+
+    <canvas id="cvs" width="500" height="250">[No canvas support]</canvas>
+    
+	<!--Bar charts & Pie Charts 
+    <script>
+        $(document).ready(function ()
+        {
+            var data = [4,8,6,3,1,2,5];
+
+            var bar = new RGraph.Pie('cvs', data)
+                .set('labels', ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'])
+                .draw();
+        })
+    </script>	
+	-->
+<input type="text" id="txtVal" ></input>
+<input type="button" value="Click" onclick="m1()" id="btnVal" ></input>
+	 <script>
+        $(document).ready(function () {
+        	var gauge = new RGraph.Gauge('cvs', 5, 30, 7)
+        		.draw();
+        })
+
+        function m1() {
+        	//alert('Clicked..');
+        	var vals = parseInt($('#txtVal').val());
+        	var gauge = new RGraph.Gauge('cvs', 5, 30, vals)
+        		.draw();
+        }
+    </script>
+	
+	
+	
+  </body>
+</html>
